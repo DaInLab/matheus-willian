@@ -9,7 +9,7 @@ tabela <- data.frame("Numero de filhos" = numeroFilhos, "Famílias" = familias)
 tabela
 View(tabela)
 
-write_xlsx(tabela,"./graficos/exercicio3.xlsx")
+write_xlsx(tabela,"./dados/exercicio3.xlsx")
 
 calculaModa <- function(numeroFilhos) {
   uniqv <- unique(numeroFilhos)
@@ -26,5 +26,7 @@ nomesDosCalculos <- c("Mediana", "Moda")
 calculos <- c(mediana, moda)
 
 png(filename = "./graficos/exercicio3.png", width = 800, height = 600)
-barplot(calculos, main="Exercício 3", xlab="Cálculos", ylab="Número de filhos", names.arg = nomesDosCalculos, ylim=c(0, 6), cex.names = 0.8, xaxs = "i")
+barplot(calculos, main="Exercício 3",
+        xlab="Cálculos", ylab="Número de filhos", 
+        names.arg = nomesDosCalculos, ylim=c(0, 6), cex.names = 0.8, xaxs = "i")
 dev.off()
